@@ -1,0 +1,21 @@
+//Este es un hook personalizado que recibe como parametro la funcion setCount del componente padre LayoutContador, y devuelve las 
+// funciones handleIncrement y handleDecrement que se encargan de incrementar o decrementar el contador respectivamente
+function useContador(setCount) {
+
+    function handleIncrement() {
+        
+        setCount(prev => prev + 1)
+    }
+
+    function handleDecrement() {
+
+        setCount(prev => prev - 1)
+    }
+
+    return {
+        handleIncrement,
+        handleDecrement
+    }
+}
+
+export default useContador;
